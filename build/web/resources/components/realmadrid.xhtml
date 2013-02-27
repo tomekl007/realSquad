@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:realsquad="http://realsquad">
+    <!--A composite component for a table displaying all students currently at the park.
+    uzywane przez current.xhtml-->
+    <h:head>
+        <title>#{bundle.ChoosePlayer}</title>
+    </h:head>
+    <h:body>
+        <composite:interface /> 
+        <composite:implementation>
+            
+            <h:form>
+            <h:panelGrid columns="1"
+                         title="choose player" >
+                <h:outputText style="font-weight:bold" 
+                              value="#{bundle.ChoosePlayer}" />
+               
+                <h:graphicImage id="mapImage" 
+                                name="real_all.jpg"
+                                library="images"
+                                alt="#{bundle.ChoosePlayer}"
+                                usemap="#bookMap" />
+               
+                <realsquad:map id="bookMap" 
+                               current="map1" 
+                               immediate="true"
+                               action="SelectedPlayerInfo">
+                    <f:actionListener 
+                        type="realsquad.listeners.MapSquadChangeListener" />
+    
+             
+                   
+                    <realsquad:area id="map1" value="#{PlayerLW}" 
+                                    onmouseover="resources/images/real_LW.jpg" 
+                                    onmouseout="resources/images/real_all.jpg" 
+                                    targetImage="mapImage"/>
+                    <realsquad:area id="map2" value="#{PlayerLW}" 
+                                    onmouseover="resources/images/real_LW.jpg" 
+                                    onmouseout="resources/images/real_all.jpg" 
+                                    targetImage="mapImage"/>
+                    <realsquad:area id="map3" value="#{PlayerLW}" 
+                                    onmouseover="resources/images/real_LW.jpg" 
+                                    onmouseout="resources/images/real_all.jpg" 
+                                    targetImage="mapImage"/>
+                    <realsquad:area id="map4" value="#{PlayerLW}" 
+                                    onmouseover="resources/images/real_LW.jpg" 
+                                    onmouseout="resources/images/real_all.jpg" 
+                                    targetImage="mapImage"/>
+                    <realsquad:area id="map5" value="#{PlayerLW}" 
+                                    onmouseover="resources/images/real_LW.jpg" 
+                                    onmouseout="resources/images/real_all.jpg" 
+                                    targetImage="mapImage"/>
+                    <realsquad:area id="map6" value="#{PlayerLW}" 
+                                    onmouseover="resources/images/real_LW.jpg" 
+                                    onmouseout="resources/images/real_all.jpg" 
+                                    targetImage="mapImage"/>
+                </realsquad:map>
+            </h:panelGrid>
+        </h:form>
+        </composite:implementation>
+    </h:body>
+</html>
+
